@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+
+import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +18,33 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor(
+    private platform: Platform,
+    
+   // private splashScreen: SplashScreen,
+    //private statusBar: StatusBar,
+    private router: Router
+   ) {
+    this.initializeApp();
+  }
+  initializeApp()
+  {
+    this.platform.ready().then(() =>{
+      //this.statusBar.styleDefault();
+      //this.splashScreen.hide();
+    // Set new Home page
+this.router.navigateByUrl("home");
+// Exit App on back button click from Home page
+this.platform.backButton.subscribeWithPriority(0, () => {
+if (window.location.pathname == "/home") {
+ navigator['app'].exitApp();
+}
+//GO TO HOME PAGE FROM OTHER PAGES
+if (window.location.pathname !== "/home") {
+  this.router.navigateByUrl("home");
+}
+});
+
+});
+  }
 }

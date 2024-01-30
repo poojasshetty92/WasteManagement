@@ -10,6 +10,30 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'wetwaste',
+    loadChildren: () => import('./pages/wetwaste/wetwaste.module').then( m => m.WetwastePageModule)
+  },
+  {
+    path: 'drywaste',
+    loadChildren: () => import('./pages/drywaste/drywaste.module').then( m => m.DrywastePageModule)
+  },
+  {
+    path: 'sanitarywaste',
+    loadChildren: () => import('./pages/sanitarywaste/sanitarywaste.module').then( m => m.SanitarywastePageModule)
+  },
+  {
+    path: 'mixedwaste',
+    loadChildren: () => import('./pages/mixedwaste/mixedwaste.module').then( m => m.MixedwastePageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
   }
 ];
 

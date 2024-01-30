@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Home | Waste Management</ion-title>
+      <!-- Menu Icon -->
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+ 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<!-- GRID MENU -->
+  <ion-card>
+    <ion-grid>
+        <ion-row class="ion-text-center">
+            <ion-col size="4" routerLink="/wetwaste">
+                <ion-icon name="trash-sharp" color="tertiary" size="large"></ion-icon>
+                <p>WetWaste</p>
+            </ion-col>
+            <ion-col size="4" routerLink="/drywaste">
+                <ion-icon name="trash-bin" color="tertiary" size="large"></ion-icon>
+                <p>DryWaste</p>
+            </ion-col>
+            <ion-col size="4" routerLink="/sanitarywaste">
+                <ion-icon name="square-outline" color="tertiary" size="large"></ion-icon>
+                <p>SanitaryWaste</p>
+            </ion-col>
+        </ion-row>
+        <!-- HORIZONTAL LINE -->
+        <div style="width: 100%; border-top: 1px solid #d4d4d4; margin: 8px 0;"></div>
+        <ion-row class="ion-text-center">
+          <ion-col size="4" routerLink="/mixedwaste">
+              <ion-icon name="warning-sharp" color="tertiary" size="large"></ion-icon>
+              <p>MixedWaste</p>
+          </ion-col>
+          <ion-col size="4" routerLink="/contact">
+              <ion-icon name="call-outline" color="tertiary" size="large"></ion-icon>
+              <p>Contact</p>
+          </ion-col>
+          
+      
+      </ion-row>
+    </ion-grid>
+
+</ion-card>
+<!-- SECTION MENU -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Wet Waste</ion-card-title>
+    <ion-card-subtitle>About Wet Waste</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-img src="/assets/images/waste.jpg"></ion-img>
+    <ion-button color="primary" routerLink="/wetwaste" expand="block">Details</ion-button>
+  </ion-card-content>
+</ion-card>
+</ion-content>
