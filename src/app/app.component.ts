@@ -29,22 +29,23 @@ export class AppComponent {
   }
   initializeApp()
   {
+    if('app' in navigator) {
+      const myApp = navigator['app'];
+    }
+    else {}
+    const myApp = (navigator as any).app;
     this.platform.ready().then(() =>{
-      //this.statusBar.styleDefault();
-      //this.splashScreen.hide();
+    //this.statusBar.styleDefault();
+    //this.splashScreen.hide();
     // Set new Home page
-this.router.navigateByUrl("home");
-// Exit App on back button click from Home page
-this.platform.backButton.subscribeWithPriority(0, () => {
-if (window.location.pathname == "/home") {
- navigator['app'].exitApp();
-}
-//GO TO HOME PAGE FROM OTHER PAGES
-if (window.location.pathname !== "/home") {
-  this.router.navigateByUrl("home");
-}
+    this.router.navigateByUrl("contact");
+      // Exit App on back button click from Home page
+    this.platform.backButton.subscribeWithPriority(0, () => {
+    if (window.location.pathname == "/contact") {
+      //navigator['app'].exitApp();
+      //this.platform.exitApp();
+    }
+  });
 });
-
-});
-  }
+}
 }
